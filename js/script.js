@@ -3,9 +3,6 @@ var counter = document.getElementById('current-item');
 var buttonPrev = document.querySelector('.btn.prev');
 var buttonNext = document.querySelector('.btn.next');
 
-/**
-* @type {Array.<number>}
-*/
 var data = new Array(44);
 
 mainCont.addEventListener('click', function(evt) {
