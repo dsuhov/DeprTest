@@ -9,7 +9,9 @@ var buttonNext = document.querySelector('.btn.next');
 var data = new Array(44);
 
 mainCont.addEventListener('click', function(evt) {
-  var currentData = evt.target.localName === 'li' ? evt.target.id.split('-').map((n) => Number(n)) : null;
+  var currentData = evt.target.localName === 'li' ? evt.target.id.split('-').map(function(n){
+    return Number(n);
+  }) : null;
 
   if (currentData) {
     if(data[currentData[0]] != undefined) {
@@ -42,7 +44,7 @@ buttonNext.onclick = function() {
   counter.innerHTML = ++n;
   if (n === 44) {
     let lastItem = document.querySelector('.item-44');
-    let result = data.reduce((a, b) => a + b);
+    let result = data.reduce(function(a, b) {return a+b;});
 
     if (result >= 0 && result <= 9) {
       lastItem.innerHTML = 'Депрессия отсутствует, либо незначительна.';
